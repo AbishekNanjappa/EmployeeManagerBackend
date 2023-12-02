@@ -10,12 +10,14 @@ services:
       - "8080:8080"
     depends_on:
       - mysql
+    restart: always
     environment:
       SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/employee_manager
       SPRING_DATASOURCE_USERNAME: springstudent
       SPRING_DATASOURCE_PASSWORD: springstudent
 
   mysql:
+    restart: always
     image: mysql:latest
     environment:
       MYSQL_DATABASE: employee_manager
