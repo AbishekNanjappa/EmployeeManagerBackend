@@ -5,6 +5,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    image: abisheknanjappa/employeemanagerserver:tagname
     ports:
       - "8080:8080"
     depends_on:
@@ -20,5 +21,6 @@ services:
       MYSQL_DATABASE: employee_manager
       MYSQL_USER: springstudent
       MYSQL_PASSWORD: springstudent
+      MYSQL_ALLOW_EMPTY_PASSWORD: true
     ports:
       - "3307:3306"
